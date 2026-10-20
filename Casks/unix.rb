@@ -9,19 +9,16 @@ cask "unix" do
 
   app "Unix.app"
 
-  # Homebrew marks downloads as quarantined; the app is signed locally rather than notarised, so
-  # Gatekeeper would refuse the first launch. Stripping the flag here is what makes the install
-  # behave like the one-line installer, which never sets it.
+  # Homebrew quarantines whatever it downloads; the app is signed locally rather than notarised, so
+  # Gatekeeper would refuse the first launch. Strip the flag here — this is what makes a cask install
+  # behave like the one-line installer, which never sets it — and no $99 Developer ID is needed.
   postflight do
     system_command "/usr/bin/xattr",
                    args: ["-dr", "com.apple.quarantine", "#{appdir}/Unix.app"]
   end
 
   caveats <<~EOS
-    StealthOverlay is signed locally, not notarised: on first launch macOS may say the developer
-    cannot be verified. Right-click the app in /Applications and choose Open once.
-
-    It needs Screen Recording and Full Disk Access, and arming needs SIP and AMFI off. Run the
-    in-app installer or `Unix login <code>` to attach this Mac to your account.
+    It needs Screen Recording and Full Disk Access, and arming needs SIP and AMFI off.
+    Run the in-app installer or `Unix login <code>` to attach this Mac to your account.
   EOS
 end
