@@ -10,7 +10,10 @@ cask "unix" do
   app "Unix.app"
 
   caveats <<~EOS
-    StealthOverlay needs Screen Recording and Full Disk Access, and arming needs SIP and AMFI off.
-    Run the in-app installer or `Unix login <code>` to attach this Mac to your account.
+    StealthOverlay is signed locally, not notarised: on first launch macOS may say the developer
+    cannot be verified. Right-click the app in /Applications and choose Open once.
+
+    It needs Screen Recording and Full Disk Access, and arming needs SIP and AMFI off. Run the
+    in-app installer or `Unix login <code>` to attach this Mac to your account.
   EOS
 end
