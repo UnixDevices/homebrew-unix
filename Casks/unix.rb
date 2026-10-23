@@ -1,6 +1,6 @@
 cask "unix" do
   version "0.1.5"
-  sha256 "c27f3c6f5ae8738bc5ded90108bec65c9205dc3da6fb6dd9e0785c78f7e4a561"
+  sha256 "cdb88d39ade5a5c0c38a9c7c70b9065b91d6bca32b0bd28ea3de19f420b9bf5c"
 
   url "https://stealthoverlay.net/download/Unix-brew-0.1.5.zip"
   name "StealthOverlay"
