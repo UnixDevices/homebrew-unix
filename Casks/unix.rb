@@ -19,6 +19,6 @@ cask "unix" do
 
   caveats <<~EOS
     It needs Screen Recording and Full Disk Access, and arming needs SIP and AMFI off.
-    Run the in-app installer or `Unix login <code>` to attach this Mac to your account.
+    Run the in-app installer, or `unix login <code>` (`unix status` for state) to attach this Mac.
   EOS
 end
