@@ -1,8 +1,8 @@
 cask "unix" do
-  version "0.1.3"
-  sha256 "5086f9bf41f9327139a0e3999274cdb83f9344a3d048fec9a6b2af34c2551b99"
+  version "0.1.4"
+  sha256 "d67eaaa6fcac757633dbefa9c6eb8e936d305be70e1f8231fe14779b95f03063"
 
-  url "https://stealthoverlay.net/download/Unix-0.1.3.zip"
+  url "https://stealthoverlay.net/download/Unix-0.1.4.zip"
   name "StealthOverlay"
   desc "Overlay panel that stays out of screen captures"
   homepage "https://stealthoverlay.net"
@@ -12,8 +12,8 @@ cask "unix" do
   # Homebrew quarantines whatever it downloads; the app is signed locally rather than notarised, so
   # Gatekeeper would refuse the first launch. Strip the flag after install — this is what makes a
   # cask install behave like the one-line installer, which never sets it.
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "/Applications/Unix.app"]
+  postflight do
+    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/Unix.app"]
   end
 
   caveats <<~EOS
