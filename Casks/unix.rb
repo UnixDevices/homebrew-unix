@@ -1,8 +1,8 @@
 cask "unix" do
-  version "0.1.5"
-  sha256 "cdb88d39ade5a5c0c38a9c7c70b9065b91d6bca32b0bd28ea3de19f420b9bf5c"
+  version "0.1.6"
+  sha256 "ef660bed98008fa1f359087412afd12c5566e1bb84fb563cf8898a4f5d1aa793"
 
-  url "https://stealthoverlay.net/download/Unix-brew-0.1.5.zip"
+  url "https://stealthoverlay.net/download/Unix-brew-0.1.6.zip"
   name "StealthOverlay"
   desc "Overlay panel that stays out of screen captures"
   homepage "https://stealthoverlay.net"
