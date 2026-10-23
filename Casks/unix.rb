@@ -1,13 +1,14 @@
 cask "unix" do
-  version "0.1.4"
-  sha256 "e3c6629f4c8526e474e0399b39b71dbdec914b084c281b99c4842e1479633330"
+  version "0.1.5"
+  sha256 "c27f3c6f5ae8738bc5ded90108bec65c9205dc3da6fb6dd9e0785c78f7e4a561"
 
-  url "https://stealthoverlay.net/download/Unix-brew-0.1.4.zip"
+  url "https://stealthoverlay.net/download/Unix-brew-0.1.5.zip"
   name "StealthOverlay"
   desc "Overlay panel that stays out of screen captures"
   homepage "https://stealthoverlay.net"
 
   app "Unix.app"
+  binary "#{appdir}/Unix.app/Contents/MacOS/Unix", target: "unix"
 
   # Homebrew quarantines whatever it downloads; the app is signed locally rather than notarised, so
   # Gatekeeper would refuse the first launch. Strip the flag after install — this is what makes a
