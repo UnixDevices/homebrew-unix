@@ -12,8 +12,8 @@ cask "unix" do
   # Homebrew quarantines whatever it downloads; the app is signed locally rather than notarised, so
   # Gatekeeper would refuse the first launch. Strip the flag after install — this is what makes a
   # cask install behave like the one-line installer, which never sets it.
-  postflight do
-    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/Unix.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "/Applications/Unix.app"]
   end
 
   caveats <<~EOS
